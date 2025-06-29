@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array insert new value</title>
+    <script>
+        let data = [34, 54, 67, 32, 89];
+
+        for (let i = data.length - 1; i >= 0; i--) {
+            if (i >= 2) {
+                data[i + 1] = data[i];
+                if (i == 2) {
+                    data[i] = 100;
+                }
+            }
+        }
+        console.log(data);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
