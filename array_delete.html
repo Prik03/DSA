@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalete value from an Array</title>
+    <script>
+        let data = [34, 32, 45, 67, 54, 89];
+
+        Array.prototype.spliceIndex = function (startIndex, removeValue) {
+            const start = startIndex;
+            const remove = removeValue;
+            for (let i = start; i < data.length; i++) {
+                if (i >= remove) {
+                    data[i] = data[i + 1];
+                }
+            }
+            data.length = data.length - 1;
+        }
+
+        data.spliceIndex(2, 4);
+
+        console.log(data)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
