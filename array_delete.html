@@ -11,17 +11,28 @@
         Array.prototype.spliceIndex = function (startIndex, removeValue) {
             const start = startIndex;
             const remove = removeValue;
-            for (let i = start; i < data.length; i++) {
+
+            if (start < 0 || start >= this.length) {
+                console.error('Invalid start Index');
+                return;
+            }
+
+            if (remove < 1 || start + remove >= this.length) {
+                console.error("Remove value is too large for array bounds");
+                return;
+            }
+
+            for (let i = start; i < this.length; i++) {
                 if (i >= remove) {
-                    data[i] = data[i + 1];
+                    this[i] = this[i + remove];
                 }
             }
-            data.length = data.length - 1;
+            this.length = this.length - remove;
+            console.log(this);
         }
 
-        data.spliceIndex(2, 4);
+        data.spliceIndex(2, 3);
 
-        console.log(data)
     </script>
 </head>
 
