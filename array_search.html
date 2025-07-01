@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search value from an Array</title>
+    <script>
+        let data = [30, 43, 21, 45, 78, 33, 44, 22, 12];
+
+        Array.prototype.indexOff = function (searchValue) {
+            let index = undefined;
+            let search = searchValue;
+            for (let i = 0; i < this.length; i++) {
+                if (this[i] === search) {
+                    index = i;
+                    break;
+                } else {
+                    index = -1;
+                }
+            }
+            return index;
+        }
+        const inc = data.indexOff(78);
+        console.log(inc);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
